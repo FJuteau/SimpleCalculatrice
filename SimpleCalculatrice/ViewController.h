@@ -38,12 +38,12 @@
 @property (strong, atomic) NSMutableArray *memoryArray;
 @property (nonatomic) NSInteger nbCurrentMemory;
 
-@property (weak, nonatomic) IBOutlet UIButton *memory1;
-@property (weak, nonatomic) IBOutlet UIButton *memory2;
-@property (weak, nonatomic) IBOutlet UIButton *memory3;
-@property (weak, nonatomic) IBOutlet UIButton *memory4;
-@property (weak, nonatomic) IBOutlet UIButton *memory5;
-@property (weak, nonatomic) IBOutlet UIButton *memory6;
+@property (weak, nonatomic) IBOutlet UITextField *memory1;
+@property (weak, nonatomic) IBOutlet UITextField *memory2;
+@property (weak, nonatomic) IBOutlet UITextField *memory3;
+@property (weak, nonatomic) IBOutlet UITextField *memory4;
+@property (weak, nonatomic) IBOutlet UITextField *memory5;
+@property (weak, nonatomic) IBOutlet UITextField *memory6;
 
 
 #pragma mark - Buttons Methodes

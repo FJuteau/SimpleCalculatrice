@@ -265,104 +265,98 @@
                                     <action selector="pushOperationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Vf-q6-kXg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKj-D6-cVw">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960779999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="leo-Bp-qK7">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960784313726" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="56" y="411" width="123" height="30"/>
+                                    <rect key="frame" x="56" y="410" width="123" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8uN-Tj-Ebx"/>
+                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ECO-hS-5ra"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er1-Dk-W3W">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960779999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KLs-f7-WFj">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960784313726" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="210" y="410" width="135" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="YPc-Hn-Dgs"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EoP-fe-d7u">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960784313726" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="56" y="473" width="123" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lqO-jG-SMh"/>
+                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="2q6-Wx-WRt"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-6O-xdC">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960779999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="56" y="534" width="123" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rNO-dr-qjl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-wU-0e1">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960779999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="210" y="411" width="135" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZa-Ar-2Wf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPL-bh-21M">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960779999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fN4-CO-6Qb">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960784313726" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="210" y="473" width="135" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcb-rz-VIf"/>
+                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="LxU-az-pPS"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etN-K5-1Gd">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960779999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Evx-gz-mZ9">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960784313726" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="56" y="534" width="123" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wYM-Ha-TS1"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8fA-zg-QCg">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.74901960784313726" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="210" y="534" width="135" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TOz-Il-bEY"/>
+                                    <action selector="memoryAcces:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fGE-qL-I7L"/>
                                 </connections>
-                            </button>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="FKj-D6-cVw"/>
-                                <exclude reference="er1-Dk-W3W"/>
-                                <exclude reference="Fv2-6O-xdC"/>
-                                <exclude reference="5d1-wU-0e1"/>
-                                <exclude reference="pPL-bh-21M"/>
-                                <exclude reference="etN-K5-1Gd"/>
+                                <exclude reference="leo-Bp-qK7"/>
+                                <exclude reference="KLs-f7-WFj"/>
+                                <exclude reference="EoP-fe-d7u"/>
+                                <exclude reference="fN4-CO-6Qb"/>
+                                <exclude reference="Evx-gz-mZ9"/>
+                                <exclude reference="8fA-zg-QCg"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="FKj-D6-cVw"/>
-                                <include reference="er1-Dk-W3W"/>
-                                <include reference="Fv2-6O-xdC"/>
-                                <include reference="5d1-wU-0e1"/>
-                                <include reference="pPL-bh-21M"/>
-                                <include reference="etN-K5-1Gd"/>
+                                <include reference="leo-Bp-qK7"/>
+                                <include reference="KLs-f7-WFj"/>
+                                <include reference="EoP-fe-d7u"/>
+                                <include reference="fN4-CO-6Qb"/>
+                                <include reference="Evx-gz-mZ9"/>
+                                <include reference="8fA-zg-QCg"/>
                             </mask>
                         </variation>
                     </view>
@@ -373,12 +367,12 @@
                         <outlet property="buttonMulti" destination="8bc-ce-Q1C" id="10o-MX-vMF"/>
                         <outlet property="buttonPlus" destination="ZMC-g5-Zcf" id="RH9-iP-N8f"/>
                         <outlet property="label" destination="eke-iE-SLn" id="JqX-o9-zWj"/>
-                        <outlet property="memory1" destination="FKj-D6-cVw" id="Yz7-JF-iaX"/>
-                        <outlet property="memory2" destination="5d1-wU-0e1" id="B73-1L-3Ud"/>
-                        <outlet property="memory3" destination="er1-Dk-W3W" id="vmW-5e-udx"/>
-                        <outlet property="memory4" destination="pPL-bh-21M" id="Fvd-o8-qdX"/>
-                        <outlet property="memory5" destination="Fv2-6O-xdC" id="iNk-gW-0mL"/>
-                        <outlet property="memory6" destination="etN-K5-1Gd" id="ta0-B7-blQ"/>
+                        <outlet property="memory1" destination="leo-Bp-qK7" id="oBS-bP-4bu"/>
+                        <outlet property="memory2" destination="KLs-f7-WFj" id="oCb-YT-hqH"/>
+                        <outlet property="memory3" destination="EoP-fe-d7u" id="erp-b1-XXb"/>
+                        <outlet property="memory4" destination="fN4-CO-6Qb" id="VhE-y1-dXI"/>
+                        <outlet property="memory5" destination="Evx-gz-mZ9" id="ZhP-Zr-FZC"/>
+                        <outlet property="memory6" destination="8fA-zg-QCg" id="u2T-CA-7Ul"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

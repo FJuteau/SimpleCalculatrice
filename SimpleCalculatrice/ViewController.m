@@ -22,6 +22,12 @@
     [self setNbCurrentMemory:0];
     
     NSLog(@"viewDidLoad");
+    [_memoryArray addObject:_memory1];
+    [_memoryArray addObject:_memory2];
+    [_memoryArray addObject:_memory3];
+    [_memoryArray addObject:_memory4];
+    [_memoryArray addObject:_memory5];
+    [_memoryArray addObject:_memory6];
     
     [self reset];
 }
@@ -98,21 +104,22 @@
     
     long i = _nbCurrentMemory;
     
+//    assert(appdelegate._memoryArray);
+    
     while ( i > 0 )
     {
-        [(UIButton *)[_memoryArray objectAtIndex:i] setTitle:[[(UIButton *)[_memoryArray objectAtIndex:i-1] titleLabel] text] forState:UIControlStateNormal];
+        [(UITextField *)[_memoryArray objectAtIndex:i] setText:[(UITextField *)[_memoryArray objectAtIndex:i-1] text]];
         i--;
     }
     
-    [(UIButton *)[_memoryArray objectAtIndex:0] setTitle:[_label text] forState:UIControlStateNormal];
-    _nbCurrentMemory++;
+    [(UITextField *)[_memoryArray objectAtIndex:0] setText:[_label text]];
 }
 
-- (IBAction)memoryAcces:(UIButton *)sender
+- (IBAction)memoryAcces:(UITextField *)sender
 {
-    if ([[[sender titleLabel] text] isEqualToString:@""])
+    if ([[sender text] isEqualToString:@""])
     {
-        [_label setText:[[sender titleLabel] text]];
+        [_label setText:[sender text]];
     }
 }
 
