@@ -13,7 +13,7 @@
 @property (nonatomic) NSString *operand1;
 @property (nonatomic) NSString *operand2;
 
-@property (nonatomic) float result;
+@property (nonatomic) double result;
 
 @property (weak, nonatomic) UIButton *nextOperation;
 
@@ -38,12 +38,11 @@
 @property (strong, atomic) NSMutableArray *memoryArray;
 @property (nonatomic) NSInteger nbCurrentMemory;
 
-@property (weak, nonatomic) IBOutlet UITextField *memory1;
-@property (weak, nonatomic) IBOutlet UITextField *memory2;
-@property (weak, nonatomic) IBOutlet UITextField *memory3;
-@property (weak, nonatomic) IBOutlet UITextField *memory4;
-@property (weak, nonatomic) IBOutlet UITextField *memory5;
-@property (weak, nonatomic) IBOutlet UITextField *memory6;
+@property (weak, nonatomic) IBOutlet UIButton *memory1;
+@property (weak, nonatomic) IBOutlet UIButton *memory2;
+@property (weak, nonatomic) IBOutlet UIButton *memory3;
+@property (weak, nonatomic) IBOutlet UIButton *memory4;
+@property (weak, nonatomic) IBOutlet UIButton *memory5;
 
 
 #pragma mark - Buttons Methodes
@@ -52,6 +51,8 @@
 - (IBAction)pushOperationButton:(UIButton *)sender;
 - (IBAction)pushEqualButton:(UIButton *)sender;
 - (IBAction)pushCancelButton:(UIButton *)sender;
+- (IBAction)pushComaButton:(UIButton *)sender;
+- (IBAction)pushNegativeButton:(UIButton *)sender;
 
 
 #pragma mark - Memory Methode

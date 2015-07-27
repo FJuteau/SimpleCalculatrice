@@ -27,7 +27,6 @@
     [_memoryArray addObject:_memory3];
     [_memoryArray addObject:_memory4];
     [_memoryArray addObject:_memory5];
-    [_memoryArray addObject:_memory6];
     
     [self reset];
 }
@@ -48,7 +47,7 @@
     NSLog(@"init");
     if (self)
     {
-        _memoryArray = [[NSMutableArray alloc] initWithObjects:_memory1, _memory2, _memory3, _memory4,_memory5, _memory6, nil];
+        _memoryArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -67,11 +66,23 @@
 
 #pragma mark - Buttons Methodes
 
+/*!
+ *  @author François Juteau
+ *
+ *  @brief  <#Description#>
+ *
+ *  @param sender <#sender description#>
+ */
 -(IBAction)pushNumericButton:(UIButton *)sender
 {
     [self pushButtonWithInt:[[NSString alloc] initWithFormat:@"%ld", [sender tag]]];
 }
 
+/*!
+ *  @brief  <#Description#>
+ *
+ *  @param sender <#sender description#>
+ */
 -(IBAction)pushOperationButton:(UIButton *)sender
 {
     [self testOperations:sender];
@@ -79,6 +90,11 @@
     [_nextOperation setSelected:YES];
 }
 
+/**
+ *  <#Description#>
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)pushEqualButton:(UIButton *)sender
 {
     [self testOperations:sender];
@@ -97,6 +113,16 @@
     }
 }
 
+- (IBAction)pushComaButton:(UIButton *)sender
+{
+    [self pushButtonWithInt:@"."];
+}
+
+- (IBAction)pushNegativeButton:(UIButton *)sender
+{
+    [_label setText:[@"-" stringByAppendingString:[_label text]]];
+}
+
 
 #pragma mark - Memory Methoes
 
@@ -104,22 +130,27 @@
     
     long i = _nbCurrentMemory;
     
-//    assert(appdelegate._memoryArray);
-    
     while ( i > 0 )
     {
-        [(UITextField *)[_memoryArray objectAtIndex:i] setText:[(UITextField *)[_memoryArray objectAtIndex:i-1] text]];
+        [(UIButton *)[_memoryArray objectAtIndex:i] setTitle:[[(UIButton *)[_memoryArray objectAtIndex:i-1] titleLabel] text] forState:UIControlStateNormal];
+        [[_memoryArray objectAtIndex:i] setHidden:NO];
         i--;
     }
     
-    [(UITextField *)[_memoryArray objectAtIndex:0] setText:[_label text]];
+    [(UIButton *)[_memoryArray objectAtIndex:0] setTitle:[_label text] forState:UIControlStateNormal];
+    [[_memoryArray objectAtIndex:0] setHidden:NO];
+    
+    // on ne dépasse pas le nombre d'objets dans le tableau
+    if (_nbCurrentMemory < [_memoryArray count]-1) {
+        _nbCurrentMemory++;
+    }
 }
 
-- (IBAction)memoryAcces:(UITextField *)sender
+- (IBAction)memoryAcces:(UIButton *)sender
 {
-    if ([[sender text] isEqualToString:@""])
+    if (![[[sender titleLabel] text] isEqualToString:@""])
     {
-        [_label setText:[sender text]];
+        [_label setText:[[sender titleLabel] text]];
     }
 }
 
@@ -153,33 +184,51 @@
     if (_nextOperation == _buttonPlus)
     {
         // Si c'est une multiplication
-        [self setResult:[_operand1 floatValue] + [_operand2 floatValue]];
+        [self setResult:[_operand1 doubleValue] + [_operand2 doubleValue]];
     }
     else if (_nextOperation == _buttonMoins)
     {
         // Si c'est une division
-        [self setResult:[_operand1 floatValue] - [_operand2 floatValue]];
+        [self setResult:[_operand1 doubleValue] - [_operand2 doubleValue]];
     }
     else if (_nextOperation == _buttonMulti)
     {
         // Si c'est une multiplication
-        [self setResult:[_operand1 floatValue] * [_operand2 floatValue]];
+        [self setResult:[_operand1 doubleValue] * [_operand2 doubleValue]];
     }
     else if (_nextOperation == _buttonDiv)
     {
+        NSLog(@"DIVISION : operand2 : %f", [_operand2 doubleValue]);
         // Si c'est une division
-        [self setResult:[_operand1 floatValue] / [_operand2 floatValue]];
+        if ([_operand2 floatValue] != 0) {
+            NSLog(@"NON EGAL");
+            [self setResult:[_operand1 doubleValue] / [_operand2 doubleValue]];
+        }
+        else
+        {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ATTENTION" message:@"Division par 0 impossible" preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction* cancel = [UIAlertAction
+                                     actionWithTitle:@"Cancel"
+                                     style:UIAlertActionStyleDefault
+                                     handler:^(UIAlertAction * action)
+                                     {
+                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                         
+                                     }];
+            [alert addAction:cancel];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }
     else
     {
         // Si l'objet est nul donc si c'est la première opération
-        [self setResult:[[_label text] floatValue]];
+        [self setResult:[[_label text] doubleValue]];
     }
     
     [_nextOperation setSelected:NO];
     [self setNextOperation:_op];
     
-    [self setOperand1:[[NSString alloc] initWithFormat:@"%f", [self result]]];
+    [self setOperand1:[[NSString alloc] initWithFormat:@"%G", _result]];
     [_label setText:[self operand1]];
 }
 
