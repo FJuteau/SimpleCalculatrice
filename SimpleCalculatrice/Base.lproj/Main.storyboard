@@ -252,7 +252,7 @@
                                     <rect key="frame" x="246" y="345" width="112" height="53"/>
                                 </variation>
                                 <connections>
-                                    <action selector="pushComaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wU9-k2-ien"/>
+                                    <action selector="pushCommaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="06b-63-otx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-rP-dzT">
@@ -265,7 +265,7 @@
                                     <rect key="frame" x="360" y="345" width="112" height="53"/>
                                 </variation>
                                 <connections>
-                                    <action selector="pushEqualButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cP6-Vj-Qzg"/>
+                                    <action selector="pushOperationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zLd-jF-dOY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMC-g5-Zcf">
