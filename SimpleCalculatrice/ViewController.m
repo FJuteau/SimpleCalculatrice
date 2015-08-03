@@ -22,11 +22,6 @@
     [self setNbCurrentMemory:0];
     
     // Assingning every memory buttons to the buttons array
-    [_memoryArray addObject:_memory1];
-    [_memoryArray addObject:_memory2];
-    [_memoryArray addObject:_memory3];
-    [_memoryArray addObject:_memory4];
-    [_memoryArray addObject:_memory5];
     
     // Swipe gesture regognizer decalration to delete a character
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleLeftSwipeGesture)];
@@ -145,40 +140,54 @@
 {
     if (![[_label text] isEqual:@""])
     {
-        long i = _nbCurrentMemory;
-        
-        while ( i > 0 )
-        {
-            [(UIButton *)[_memoryArray objectAtIndex:i] setTitle:[[(UIButton *)[_memoryArray objectAtIndex:i-1] titleLabel] text] forState:UIControlStateNormal];
-            [[_memoryArray objectAtIndex:i] setHidden:NO];
-            i--;
-        }
-        
-        [(UIButton *)[_memoryArray objectAtIndex:0] setTitle:[_label text] forState:UIControlStateNormal];
-        [[_memoryArray objectAtIndex:0] setHidden:NO];
-        
-        // on ne dépasse pas le nombre d'objets dans le tableau
-        if (_nbCurrentMemory < [_memoryArray count]-1) {
-            _nbCurrentMemory++;
-        }
+        NSString *tempMemory = [[NSString alloc] initWithString:[_label text]];
+        [_memoryArray insertObject:tempMemory atIndex:0];
     }
+    [_memoryTableView reloadData];
 
 }
 
-/**
- *  @author François Juteau, 15-07-31 00:07:33
- *
- *  @brief  Sets the label to the UIButton text if it's not empty
- *  @param sender a memory button that was pressed
- */
-- (IBAction)memoryAcces:(UIButton *)sender
+
+#pragma mark - UITableViewDataSource Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (![[[sender titleLabel] text] isEqualToString:@""])
-    {
-        [_label setText:[[sender titleLabel] text]];
-        [_nextOperation setSelected:NO];
-    }
+    return 1;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _memoryArray.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"memoryCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    [[cell textLabel] setText:[_memoryArray objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
+
+
+#pragma UITableViewDelegate Methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *val = [_memoryArray objectAtIndex:indexPath.row];
+    
+    [_label setText:val];
+    
+    [_nextOperation setSelected:NO];
+}
+
 
 #pragma mark - Handling methods
 
@@ -199,6 +208,27 @@
         [_label setText:[[_label text] substringToIndex:[[_label text] length]-1]];
     }
 }
+
+/**
+ *  @author François Juteau, 15-08-03 08:08:08
+ *
+ *  @brief Handle the displaying of an error message
+ *  @param _message message to display
+ */
+-(void) handleErrorMessages:(NSString *)_message
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ATTENTION" message:_message preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 #pragma mark - Intern methods
 
@@ -263,16 +293,7 @@
             }
             else
             {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ATTENTION" message:@"Division par 0 impossible" preferredStyle:UIAlertControllerStyleActionSheet];
-                UIAlertAction* cancel = [UIAlertAction
-                                         actionWithTitle:@"Cancel"
-                                         style:UIAlertActionStyleDefault
-                                         handler:^(UIAlertAction * action)
-                                         {
-                                             [alert dismissViewControllerAnimated:YES completion:nil];
-                                         }];
-                [alert addAction:cancel];
-                [self presentViewController:alert animated:YES completion:nil];
+                [self handleErrorMessages:@"Non divisible par 0"];
             }
         }
         else
