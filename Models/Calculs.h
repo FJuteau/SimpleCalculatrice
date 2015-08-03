@@ -10,4 +10,9 @@
 
 @interface Calculs : NSObject
 
++(NSString *) doPlusOperation:(NSString *)_op1 withOperand2:(NSString *)_op2 andResult:(double)_result;
++(NSString *) doMoinsOperation:(NSString *)_op1 withOperand2:(NSString *)_op2;
++(NSString *) doMultiOperation:(NSString *)_op1 withOperand2:(NSString *)_op2;
++(NSString *) doDivOperation:(NSString *)_op1 withOperand2:(NSString *)_op2;
+
 @end

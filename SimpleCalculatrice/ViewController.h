@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) NSString *operand1;
 @property (nonatomic) NSString *operand2;
@@ -18,7 +18,7 @@
 // UIButton cache that will kepp the next operation that will be used
 @property (weak, nonatomic) UIButton *nextOperation;
 
-@property (weak, nonatomic) IBOutlet UITextField *label;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 
 #pragma mark - Inits and Resets
@@ -41,12 +41,7 @@
 // The numer of memory currently displayed
 @property (nonatomic) NSInteger nbCurrentMemory;
 
-@property (weak, nonatomic) IBOutlet UIButton *memory1;
-@property (weak, nonatomic) IBOutlet UIButton *memory2;
-@property (weak, nonatomic) IBOutlet UIButton *memory3;
-@property (weak, nonatomic) IBOutlet UIButton *memory4;
-@property (weak, nonatomic) IBOutlet UIButton *memory5;
-
+@property (weak, nonatomic) IBOutlet UITableView *memoryTableView;
 
 #pragma mark - Buttons Methodes
 
@@ -65,14 +60,6 @@
  *  @param sender not used
  */
 - (IBAction)AddMemory:(id)sender;
-
-/**
- *  @author François Juteau, 15-07-31 00:07:33
- *
- *  @brief  Sets the label to the UIButton text if it's not empty
- *  @param sender a memory button that was pressed
- */
-- (IBAction)memoryAcces:(id)sender;
 
 
 @end
