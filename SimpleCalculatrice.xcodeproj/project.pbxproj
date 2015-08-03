@@ -14,6 +14,7 @@
 		4213E4331B6218D800A66E1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4213E4321B6218D800A66E1C /* Images.xcassets */; };
 		4213E4361B6218D800A66E1C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4213E4341B6218D800A66E1C /* LaunchScreen.xib */; };
 		4213E4421B6218D800A66E1C /* SimpleCalculatriceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4213E4411B6218D800A66E1C /* SimpleCalculatriceTests.m */; };
+		429374691B6CD59A00DDEC12 /* Calculs.m in Sources */ = {isa = PBXBuildFile; fileRef = 429374681B6CD59A00DDEC12 /* Calculs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		4213E43B1B6218D800A66E1C /* SimpleCalculatriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCalculatriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4213E4401B6218D800A66E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4213E4411B6218D800A66E1C /* SimpleCalculatriceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleCalculatriceTests.m; sourceTree = "<group>"; };
+		429374671B6CD59A00DDEC12 /* Calculs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Calculs.h; path = Models/Calculs.h; sourceTree = "<group>"; };
+		429374681B6CD59A00DDEC12 /* Calculs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calculs.m; path = Models/Calculs.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		4213E4191B6218D800A66E1C = {
 			isa = PBXGroup;
 			children = (
+				429374661B6CD56200DDEC12 /* Models */,
 				4213E4241B6218D800A66E1C /* SimpleCalculatrice */,
 				4213E43E1B6218D800A66E1C /* SimpleCalculatriceTests */,
 				4213E4231B6218D800A66E1C /* Products */,
@@ -117,6 +121,15 @@
 				4213E4401B6218D800A66E1C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		429374661B6CD56200DDEC12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				429374671B6CD59A00DDEC12 /* Calculs.h */,
+				429374681B6CD59A00DDEC12 /* Calculs.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +235,7 @@
 				4213E42E1B6218D800A66E1C /* ViewController.m in Sources */,
 				4213E42B1B6218D800A66E1C /* AppDelegate.m in Sources */,
 				4213E4281B6218D800A66E1C /* main.m in Sources */,
+				429374691B6CD59A00DDEC12 /* Calculs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

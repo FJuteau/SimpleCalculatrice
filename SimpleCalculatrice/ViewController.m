@@ -21,11 +21,17 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self setNbCurrentMemory:0];
     
+    // Assingning every memory buttons to the buttons array
     [_memoryArray addObject:_memory1];
     [_memoryArray addObject:_memory2];
     [_memoryArray addObject:_memory3];
     [_memoryArray addObject:_memory4];
     [_memoryArray addObject:_memory5];
+    
+    // Swipe gesture regognizer decalration to delete a character
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleLeftSwipeGesture)];
+    [swipe setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [[self view] addGestureRecognizer:swipe];
     
     [self reset];
 }
@@ -101,15 +107,7 @@
  */
 - (IBAction)pushCancelButton:(UIButton *)sender
 {
-    if ([_nextOperation isSelected] || _nextOperation == _buttonEqual)
-    {
-        [self reset];
-    }
-    else
-    {
-        // On prend les caractères du text du label jusqu'à sa taille -1
-        [_label setText:[[_label text] substringToIndex:[[_label text] length]-1]];
-    }
+    [self reset];
 }
 
 /**
@@ -182,6 +180,25 @@
     }
 }
 
+#pragma mark - Handling methods
+
+/**
+ *  @author François Juteau, 15-07-31 01:07:51
+ *
+ *  @brief  Hadle the left swuoe gesture by deleting the last character on the label
+ */
+-(void) handleLeftSwipeGesture
+{
+    if ([_nextOperation isSelected] || _nextOperation == _buttonEqual || [[_label text] isEqual:@""])
+    {
+        [self reset];
+    }
+    else
+    {
+        // On prend les caractères du text du label jusqu'à sa taille -1
+        [_label setText:[[_label text] substringToIndex:[[_label text] length]-1]];
+    }
+}
 
 #pragma mark - Intern methods
 
